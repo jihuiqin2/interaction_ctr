@@ -12,3 +12,10 @@
 
 1. python3.6
 2. pytorch1.4
+
+# 数据集
+
+（1）criteo
+https://criteostorage.blob.core.windows.net/criteo-research-datasets/kaggle-display-advertising-challenge-dataset.tar.gz
+（2）avazu
+https://www.kaggle.com/c/avazu-ctr-prediction
