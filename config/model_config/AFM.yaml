@@ -1,0 +1,42 @@
+Base:
+  model_root: '../checkpoints/'  # 日志和模型存放地
+  num_workers: 3
+  verbose: 1  # 进度条
+  patience: 2   # 能够容忍多少个epoch内都没有改善
+  pickle_feature_encoder: True
+  use_hdf5: True
+  save_best_only: True
+  every_x_epochs: 1
+  debug: False
+  partition_block_size: -1
+  gpu: 0
+
+
+AFM_base:
+  model_id: AFM_demo  # (重置为了AFM_base)保存模型名称
+  # （使用哪个数据集三个选择【tiny_data_demo，criteo_demo，avazu_demo，avazu_4000w_demo，criteo_4500w_demo】）
+  # 【1】checkpoints/+下日志和模型文件夹名，
+  # 【2】dataset_config/+下yml数据集名，
+  # 【3】data/+下保存的h5数据集
+  model_name: AFM   # 模型的名称
+  loss: binary_crossentropy
+  metrics: [ 'logloss', 'AUC' ]
+  task: binary_classification    # 分类问题
+  optimizer: adam
+  learning_rate: 1.e-3
+  batch_size: 1024
+  epochs: 1
+  shuffle: True
+  seed: 20002
+  rand_number: 20002
+  monitor: { 'AUC': 1, 'logloss': -1 }
+  monitor_mode: 'max'
+
+  embedding_regularizer: l2(0.1)
+  net_regularizer: 0
+  embedding_dim: 16
+  attention_dim: 20
+  attention_dropout: [ 0, 0 ]
+  use_attention: True
+
+

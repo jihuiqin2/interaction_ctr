@@ -1,0 +1,35 @@
+Base:
+  model_root: '../checkpoints/'  # 日志和模型存放地
+  num_workers: 3
+  verbose: 1
+  patience: 2
+  pickle_feature_encoder: True
+  use_hdf5: True
+  save_best_only: True
+  every_x_epochs: 1
+  debug: False
+  partition_block_size: -1
+  gpu: 0
+
+HOFM_base:
+  model_id: HOFM_demo
+  model_name: HOFM
+  dataset_id: criteo_4500w_demo
+  loss: binary_crossentropy
+  metrics: [ 'logloss', 'AUC' ]
+  task: binary_classification
+  optimizer: adam
+  learning_rate: 1.0e-3
+  batch_size: 1024
+  epochs: 10
+  shuffle: True
+  seed: 20001
+  rand_number: 20001
+  monitor: { 'AUC': 1, 'logloss': -1 }
+  monitor_mode: 'max'
+
+  regularizer: 0
+  order: 4
+  embedding_dim: 16
+  reuse_embedding: False
+  output_type: 'product_sum_pooling'

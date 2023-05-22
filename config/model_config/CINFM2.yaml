@@ -1,0 +1,49 @@
+Base:
+  model_root: '../checkpoints/'  # 日志和模型存放地
+  num_workers: 3
+  verbose: 1
+  patience: 2
+  pickle_feature_encoder: True
+  use_hdf5: True
+  save_best_only: True
+  every_x_epochs: 1
+  debug: False
+  partition_block_size: -1
+  gpu: 0
+
+
+
+CINFM2_base:
+  model_id: CINFM2_demo
+  model_name: CINFM2
+  loss: 'binary_crossentropy'
+  metrics: [ 'logloss', 'AUC' ]
+  task: binary_classification
+  optimizer: adam
+  learning_rate: 1.0e-3
+  batch_size: 1024
+  epochs: 1
+  shuffle: True
+  seed: 20001
+  rand_number: 20001
+  monitor: { 'AUC': 1, 'logloss': -1 }
+  monitor_mode: 'max'
+  embedding_regularizer: 0
+  net_regularizer: 0
+  embedding_dim: 16  # 40000(8),40001(16),40002(24),40003(32),40004(40),40005(48)
+  attention_dim: 20
+  hidden_dim: null
+  num_heads: 2  # 60001(1),60002(2),60003(3),60004(4)
+  num_cross_layers: 3   # 50001(1),50002(2),50003(3),50004(4)
+  dnn_hidden_units: [ 200, 200, 200 ]
+  residual_blocks: [ 300, 300, 300 ]
+  hidden_activations: relu
+  att_dropout: 0.2
+  net_dropout: 0.2
+  bridge_type: 'hadamard_product'  # [1="hadamard_product", 2="pointwise_addition", 3="concatenation", 4="attention_pooling"]
+
+  batch_norm: False
+  layer_norm: True
+  use_scale: True
+  use_residual: True   # 在其它网络中使用残差
+  relu_before_att: True  # 线性层后是否使用relu

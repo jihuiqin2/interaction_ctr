@@ -1,0 +1,20 @@
+### Criteo dataset
+criteo_4500w_demo:
+  data_root: ../data/
+  data_format: csv
+  #  all_data: ../data/criteo/train.csv
+  #  valid_size: 0.1
+  #  test_size: 0.1
+  #  train_data: ../data/criteo/train.csv
+  #  valid_data: ../data/criteo/valid.csv
+  #  test_data: ../data/criteo/test.csv
+  min_categr_count: 10
+  data_block_size: -1
+  feature_cols:
+    - { name: [ I1,I2,I3,I4,I5,I6,I7,I8,I9,I10,I11,I12,I13 ],
+        active: True, dtype: float, type: categorical, preprocess: convert_to_bucket, na_value: 0 }
+    - { name: [ C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11,C12,C13,C14,C15,C16,C17,C18,C19,C20,C21,C22,C23,C24,C25,C26 ],
+        active: True, dtype: str, type: categorical, na_value: "" }
+  label_col: { name: Label, dtype: float }
+
+# 13个数值特征，26个字符特征，1个目标值

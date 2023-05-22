@@ -1,0 +1,40 @@
+Base:
+  model_root: '../checkpoints/'  # 日志和模型存放地
+  num_workers: 3
+  verbose: 1
+  patience: 2
+  pickle_feature_encoder: True
+  use_hdf5: True
+  save_best_only: True
+  every_x_epochs: 1
+  debug: False
+  partition_block_size: -1
+  gpu: 0
+
+DeepCrossing_base:
+  model_id: DeepCrossing_demo
+  model_name: DeepCrossing
+  loss: 'binary_crossentropy'
+  metrics: [ 'logloss', 'AUC' ]
+  task: binary_classification
+  optimizer: adam
+  learning_rate: 1.0e-3
+  batch_size: 1024
+  epochs: 1
+  shuffle: True
+  seed: 20002
+  rand_number: 20002
+  monitor: { 'AUC': 1, 'logloss': -1 }
+  monitor_mode: 'max'
+  embedding_regularizer: 0
+  net_regularizer: 0
+  embedding_dim: 16
+  residual_blocks: [ 500, 500, 500 ]
+  hidden_activations: relu
+  net_dropout: 0
+  batch_norm: False
+  use_residual: True
+
+
+
+

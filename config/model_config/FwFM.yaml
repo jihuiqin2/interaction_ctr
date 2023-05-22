@@ -1,0 +1,34 @@
+Base:
+  model_root: '../checkpoints/'  # 日志和模型存放地
+  num_workers: 3
+  verbose: 1
+  patience: 2
+  pickle_feature_encoder: True
+  use_hdf5: True
+  save_best_only: True
+  every_x_epochs: 1
+  debug: False
+  partition_block_size: -1
+  gpu: -1
+
+
+FwFM_base:
+  model_id: FwFM_demo
+  dataset_id: criteo_1w_demo    # tiny_data_demo, criteo_demo
+  loss: binary_crossentropy
+  metrics: [ 'logloss', 'AUC' ]
+  dnn_hidden_units: [ 64, 64, 64 ]
+  dnn_activations: relu
+  task: binary_classification
+  optimizer: adam
+  learning_rate: 1.0e-3
+  batch_size: 1024
+  epochs: 3
+  shuffle: True
+  seed: 2022
+  rand_number: 10001
+  monitor: { 'AUC': 1, 'logloss': -1 }
+  monitor_mode: 'max'
+  regularizer: 0
+  embedding_dim: 16
+  linear_type: LW  # 特有的

@@ -1,0 +1,45 @@
+Base:
+  model_root: '../checkpoints/'  # 日志和模型存放地
+  num_workers: 3
+  verbose: 1
+  patience: 2
+  pickle_feature_encoder: True
+  use_hdf5: True
+  save_best_only: True
+  every_x_epochs: 1
+  debug: False
+  partition_block_size: -1
+  gpu: 0
+
+
+
+InterHAT_base:
+  model_id: InterHAT_demo
+  model_name: InterHAT
+  dataset_id: criteo_4500w_demo
+  loss: 'binary_crossentropy'
+  metrics: [ 'logloss', 'AUC' ]
+  task: binary_classification
+  optimizer: adam
+  learning_rate: 1.0e-3
+  batch_size: 1024
+  epochs: 10
+  shuffle: True
+  seed: 20001
+  rand_number: 20001
+  monitor: { 'AUC': 1, 'logloss': -1 }
+  monitor_mode: 'max'
+  embedding_dim: 16
+  embedding_regularizer: 0
+  embedding_dropout: 0
+  hidden_dim: null   # 隐藏层维度
+  hidden_units: [ 64 ]  # 隐藏层单元数
+  hidden_activations: relu
+  order: 3   # 交叉层数
+  num_heads: 2
+  attention_dim: 20
+  net_dropout: 0.2
+  net_regularizer: 0
+  batch_norm: False
+  layer_norm: True
+  use_residual: True

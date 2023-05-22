@@ -1,0 +1,152 @@
+{
+    "dataset_id": "avazu_demo",
+    "num_fields": 24,
+    "num_features": 69650,
+    "input_length": 24,
+    "feature_specs": {
+        "hour": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 6,
+            "index": 0
+        },
+        "C1": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 8,
+            "index": 1
+        },
+        "banner_pos": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 7,
+            "index": 2
+        },
+        "site_id": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 1014,
+            "index": 3
+        },
+        "site_domain": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 856,
+            "index": 4
+        },
+        "site_category": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 19,
+            "index": 5
+        },
+        "app_id": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 988,
+            "index": 6
+        },
+        "app_domain": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 82,
+            "index": 7
+        },
+        "app_category": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 22,
+            "index": 8
+        },
+        "device_id": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 10143,
+            "index": 9
+        },
+        "device_ip": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 52935,
+            "index": 10
+        },
+        "device_model": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 2703,
+            "index": 11
+        },
+        "device_type": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 5,
+            "index": 12
+        },
+        "device_conn_type": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 5,
+            "index": 13
+        },
+        "C14": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 463,
+            "index": 14
+        },
+        "C15": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 7,
+            "index": 15
+        },
+        "C16": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 8,
+            "index": 16
+        },
+        "C17": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 148,
+            "index": 17
+        },
+        "C18": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 5,
+            "index": 18
+        },
+        "C19": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 40,
+            "index": 19
+        },
+        "C20": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 147,
+            "index": 20
+        },
+        "C21": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 35,
+            "index": 21
+        },
+        "weekday": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 2,
+            "index": 22
+        },
+        "weekend": {
+            "source": "",
+            "type": "categorical",
+            "vocab_size": 2,
+            "index": 23
+        }
+    }
+}
