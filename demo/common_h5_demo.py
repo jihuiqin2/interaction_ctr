@@ -14,8 +14,8 @@ if __name__ == '__main__':
     # 设置参数
     parser = argparse.ArgumentParser()
     parser.add_argument('--config_dataset_yaml', type=str, default='../config/dataset_config/avazu.yaml')
-    parser.add_argument('--config_model_yaml', type=str, default='../config/model_config/CINFM2.yaml')
-    parser.add_argument('--experiment_id', type=str, default='CINFM2_base')
+    parser.add_argument('--config_model_yaml', type=str, default='../config/model_config/DSAN.yaml')
+    parser.add_argument('--experiment_id', type=str, default='DSAN_base')
     parser.add_argument('--dataset_id', type=str, default='avazu_1w_demo')
     args = vars(parser.parse_args())
 
@@ -44,15 +44,15 @@ if __name__ == '__main__':
     model_class = getattr(model, params['model_name'])
     model = model_class(feature_map, **params)
     model.count_parameters()  # print number of parameters used in model
-    # model.fit_generator(train_gen,
-    #                     validation_data=valid_gen,
-    #                     epochs=params['epochs'],
-    #                     verbose=params['verbose'])
+    model.fit_generator(train_gen,
+                        validation_data=valid_gen,
+                        epochs=params['epochs'],
+                        verbose=params['verbose'])
 
     model.load_weights(model.checkpoint)  # reload the best checkpoint
 
     logging.info('***** validation results *****')
-    # model.evaluate_generator(valid_gen)
+    model.evaluate_generator(valid_gen)
 
     logging.info('***** test results *****')
     test_gen = datasets.h5_generator(feature_map,

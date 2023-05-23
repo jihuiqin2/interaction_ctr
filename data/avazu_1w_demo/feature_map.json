@@ -1,5 +1,5 @@
 {
-    "dataset_id": "avazu_demo",
+    "dataset_id": "avazu_1w_demo",
     "num_fields": 24,
     "num_features": 69650,
     "input_length": 24,

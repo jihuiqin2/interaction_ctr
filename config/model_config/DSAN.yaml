@@ -13,9 +13,9 @@ Base:
 
 
 
-CINFM2_base:
-  model_id: CINFM2_demo
-  model_name: CINFM2
+DSAN_base:
+  model_id: DSAN_demo
+  model_name: DSAN
   loss: 'binary_crossentropy'
   metrics: [ 'logloss', 'AUC' ]
   task: binary_classification

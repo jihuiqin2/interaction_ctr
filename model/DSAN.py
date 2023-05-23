@@ -1,24 +1,3 @@
-# =========================================================================
-# Copyright (C) 2021. Huawei Technologies Co., Ltd. All rights reserved.
-# Copyright (C) 2021. The Chinese University of Hong Kong. All rights reserved.
-#
-# Authors: Jinyang Liu <The Chinese University of Hong Kong>
-#          Jieming Zhu <Huawei Noah's Ark Lab>
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# =========================================================================
-
-
 import torch
 from torch import nn
 from .BaseModel import BaseModel
@@ -29,7 +8,7 @@ from layer.interaction import CrossNet, AttentionalAggregation, CrossInteraction
 from layer.attention import DisentangledSelfAttention
 
 
-class CINFM2(BaseModel):
+class DSAN(BaseModel):
     def __init__(self,
                  feature_map,
                  model_id="CINFM2",
@@ -53,7 +32,7 @@ class CINFM2(BaseModel):
                  bridge_type="hadamard_product",
                  num_cross_layers=3,
                  **kwargs):
-        super(CINFM2, self).__init__(feature_map,
+        super(DSAN, self).__init__(feature_map,
                                      model_id=model_id,
                                      gpu=gpu,
                                      embedding_regularizer=embedding_regularizer,
