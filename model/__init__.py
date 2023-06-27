@@ -9,6 +9,7 @@ from .AutoInt import AutoInt
 from .PNN import PNN
 from .xDeepFM import xDeepFM
 from .FiBiNet import FiBiNet
+from .DESTINE import DESTINE
 
 # my model
 from .DSAN import DSAN
